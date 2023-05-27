@@ -1,8 +1,11 @@
 import Input from "@/components/Input";
 import axios from "axios";
 import React, { useCallback, useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const Auth = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +18,19 @@ const Auth = () => {
     );
   }, []);
 
+  const login = useCallback(async () => {
+    try {
+      await signIn("credentials", {
+        email,
+        password,
+        callbackUrl: "/",
+      });
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }, [email, password]);
+
   const register = useCallback(async () => {
     try {
       await axios.post("/api/register", {
@@ -22,10 +38,11 @@ const Auth = () => {
         name,
         password,
       });
+      login();
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [email, name, password, login]);
 
   return (
     <div className="relative h-full bg-[url('/images/hero.png')] bg-no-repeat bg-bottom bg-fixed bg-cover">
@@ -61,14 +78,17 @@ const Auth = () => {
               <Input
                 label="Mot de passe"
                 onChange={(e: any) => {
-                  setEmail(e.target.value);
+                  setPassword(e.target.value);
                 }}
                 id="password"
                 type="password"
                 value={password}
               />
             </div>
-            <button className="hover:bg-[#C1FF72] py-3 text-[#2F4858] rounded-md w-full mt-10 bg-[#66E08C] transition">
+            <button
+              onClick={variant === "login" ? login : register}
+              className="hover:bg-[#C1FF72] py-3 text-[#2F4858] rounded-md w-full mt-10 bg-[#66E08C] transition"
+            >
               {variant === "register" ? "S'inscrire" : "Se Connecter"}
             </button>
             <p className="text-neutral-400 mt-12 text-center">
