@@ -1,12 +1,32 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
+import useCurrentUser from "@/hooks/userCurrentUser";
+import { NextPageContext } from "next";
+import { getSession, signOut } from "next-auth/react";
 
-const inter = Inter({ subsets: ["latin"] });
+export async function getServerSideProps(context: NextPageContext) {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth",
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {},
+  };
+}
 
 export default function Home() {
+  const { data: user } = useCurrentUser();
+
   return (
-    <h1 className="shadow-xl py-10 text-center hover:text-yellow-700">
-      Hello world
-    </h1>
+    <>
+      <h1 className="text-4xl text-green-400">Webflix</h1>
+      <p>{user?.email}</p>
+      <button className="h-10 w-full bg-white" onClick={() => signOut()}>
+        Deco
+      </button>
+    </>
   );
 }

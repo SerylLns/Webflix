@@ -6,6 +6,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import prismadb from "@/libs/prismadb";
+
 import { compare } from "bcrypt";
 
 export default NextAuth({
@@ -36,7 +37,7 @@ export default NextAuth({
           throw new Error("Email et Mot de Passe requis");
         }
 
-        const user = await prismadb.user.findUnique({
+        const user = await prismadb?.user.findUnique({
           where: {
             email: credentials.email,
           },
