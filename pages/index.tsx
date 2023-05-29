@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import useCurrentUser from "@/hooks/userCurrentUser";
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
@@ -22,11 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="text-4xl text-green-400">Webflix</h1>
-      <p>{user?.email}</p>
-      <button className="h-10 w-full bg-white" onClick={() => signOut()}>
-        Deco
-      </button>
+      <Navbar />
     </>
   );
 }
