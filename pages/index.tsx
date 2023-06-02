@@ -1,5 +1,6 @@
+import Billboard from "@/components/Billboard";
 import Navbar from "@/components/Navbar";
-import useCurrentUser from "@/hooks/userCurrentUser";
+import useCurrentUser from "@/hooks/useCurrentUser";
 import { NextPageContext } from "next";
 import { getSession, signOut } from "next-auth/react";
 
@@ -24,6 +25,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      <Billboard />
+      <MoviesList />
     </>
   );
 }

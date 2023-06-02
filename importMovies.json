@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Big Buck Bunny",
+    "description": "Trois rongeurs s'amusent à harceler les créatures de la forêt. Cependant, lorsqu'ils s'en prennent à un lapin, celui-ci décide de leur donner une leçon.",
+    "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    "thumbnailUrl": "https://upload.wikimedia.org/wikipedia/commons/7/70/Big.Buck.Bunny.-.Opening.Screen.png",
+    "genre": "Comédie",
+    "duration": "10 minutes"
+  },
+  {
+    "title": "Sintel",
+    "description": "Une jeune femme solitaire, Sintel, aide et se lie d'amitié avec un dragon qu'elle appelle Écailles. Mais lorsque celui-ci est enlevé par un dragon adulte, Sintel décide de se lancer dans une quête dangereuse pour retrouver son ami perdu Écailles.",
+    "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+    "thumbnailUrl": "http://uhdtv.io/wp-content/uploads/2020/10/Sintel-3.jpg",
+    "genre": "Aventure",
+    "duration": "15 minutes"
+  },
+  {
+    "title": "Tears of Steel",
+    "description": "Dans un futur apocalyptique, un groupe de soldats et de scientifiques trouve refuge à Amsterdam pour tenter d'arrêter une armée de robots qui menace la planète.",
+    "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    "thumbnailUrl": "https://mango.blender.org/wp-content/uploads/2013/05/01_thom_celia_bridge.jpg",
+    "genre": "Action",
+    "duration": "12 minutes"
+  },
+  {
+    "title": "Elephant's Dream",
+    "description": "Les amis Proog et Emo se lancent à l'intérieur des plis d'une Machine apparemment infinie, explorant le complexe sombre et tordu de fils, d'engrenages et de rouages, jusqu'à ce qu'un moment de conflit remette en question toutes leurs hypothèses.",
+    "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    "thumbnailUrl": "https://download.blender.org/ED/cover.jpg",
+    "genre": "Science-fiction",
+    "duration": "15 minutes"
+  }
+]
