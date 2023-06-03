@@ -44,12 +44,12 @@ const Auth = () => {
   }, [email, name, password, login]);
 
   return (
-    <div className="relative h-full bg-[url('/images/hero.png')] bg-no-repeat bg-bottom bg-fixed bg-cover">
+    <div className="relative h-full overflow-y-hidden bg-[url('/images/hero.png')] bg-no-repeat bg-bottom bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-30">
         <h1 className="text-[#C1FF72] lg:hidden text-center pt-6 text-6xl font-bold">
           WEBFLIX
         </h1>
-        <div className="flex justify-center py-48">
+        <div className="flex justify-center py-48 h-full">
           <div className="lg:bg-[#2F4858] lg:bg-opacity-90 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
             <h2 className="text-white text-4xl mb-8 text-center font-semibold">
               {variant === "register" ? "S'inscrire" : "Se Connecter"}
